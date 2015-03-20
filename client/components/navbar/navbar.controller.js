@@ -9,6 +9,10 @@ angular.module('ummcanIbuyThisApp')
       {
         'title': 'List an Item',
         'link': '/ListItem'
+      },
+      {
+        'title': "UMM",
+        'link': "http://www.morris.umn.edu/"
       }];
 
     $scope.isCollapsed = true;
