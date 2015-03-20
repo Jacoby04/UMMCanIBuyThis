@@ -5,8 +5,13 @@ var mongoose = require('mongoose'),
 
 var ListedItemSchema = new Schema({
   name: String,
-  info: String,
-  active: Boolean
+  description: String,
+  price: Number,
+  //imagePath: String,
+  category: String,
+  tags: [],
+  // True means seller is willing to negotiate.
+  negotiable: Boolean
 });
 
 module.exports = mongoose.model('ListedItem', ListedItemSchema);

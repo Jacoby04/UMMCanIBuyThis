@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var ListedItem = require('../api/ListedItem/ListedItem.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -46,4 +47,15 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
+});
+
+ListedItem.find({}).remove(function() {
+  ListedItem.create({
+    name: 'Test1',
+    description: 'Description of Test1',
+    price: 20,
+    category: 'Test Category',
+    tags: ['cool', 'suave'],
+    negotiable: true
+  });
 });
