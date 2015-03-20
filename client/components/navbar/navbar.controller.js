@@ -5,7 +5,11 @@ angular.module('ummcanIbuyThisApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    },
+      {
+        'title': 'List an Item',
+        'link': '/ListItem'
+      }];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
