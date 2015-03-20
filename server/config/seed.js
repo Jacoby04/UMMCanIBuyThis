@@ -8,6 +8,7 @@
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 var ListedItem = require('../api/ListedItem/ListedItem.model');
+var Category = require('../api/category/category.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -57,5 +58,20 @@ ListedItem.find({}).remove(function() {
     category: 'Test Category',
     tags: ['cool', 'suave'],
     negotiable: true
+  });
+});
+
+Category.find({}).remove(function() {
+  Category.create({
+    name: 'Test Category 1',
+    tags: []
+  });
+  Category.create({
+    name: 'Test Category 2',
+    tags: []
+  });
+  Category.create({
+    name: 'Test Category 3',
+    tags: []
   });
 });
