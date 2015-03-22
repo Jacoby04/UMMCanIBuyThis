@@ -1,5 +1,38 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="col-md-12">
-This is the ListItem view.
+<div class="container">
+  <form ng-submit="createListItem()" id="mainForm">
+    <h1>
+      List an Item
+    </h1>
+
+    <input type="text" placeholder="Enter Item Name" ng-model="listItemData.name" size="40px" required>
+
+    <br>
+
+    $<input type="Number" placeholder="Enter Item Price" ng-model="listItemData.price" required>
+    <input type="checkbox" ng-model="listItemData.negotiable" value="Is this price negotiable"> Is this price Negotiable?
+
+    <br>
+
+    <img src="assets/images/imageUploadTemp.jpg" alt="We are Morris, bum bum bumbumbum bum" width="200px">
+    <textarea placeholder="Enter Description" ng-model="listItemData.description" cols="50" rows="5"/>
+    <br>
+
+    <select ng-model="listItemData.category" placeholder="Select Category" required>
+      <option value="" disabled selected>Select Category</option>
+      <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+    </select>
+
+    <label>Add tags relevant to your item</label>
+    <br>
+    <input type="text" class="form-control" placeholder="Add a Tag" ng-model="newTag" size="40px">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" ng-click="addTag()">Add</button>
+    </span>
+    {{listItemData.tags}}
+    <br>
+
+    <button class="btn btn-primary" type="submit" value="submit">Submit</button>
+  </form>
 </div>
