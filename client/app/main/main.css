@@ -30,15 +30,29 @@
 }
 
 #side {
-  border-style: solid;
+
   width: 200px;
   height: 500px;
   float: left;
   margin-left: 30px;
   padding: 10px;
-
+  background: #991414;
+  color: #ffffff;
 }
 
 #features {
-  border: solid;
+
+}
+
+.category-links {
+  color: #ffffff;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  display:block;
+
+}
+
+.category-links:hover {
+  color: #ffff00;
+  text-decoration: none;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.6);
 }
