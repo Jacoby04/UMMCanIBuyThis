@@ -19,6 +19,7 @@ angular.module('ummcanIbuyThisApp')
 
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
+      console.log("hello o/")
     };
 
     $scope.$on('$destroy', function () {
