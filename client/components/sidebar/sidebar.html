@@ -1,18 +1,4 @@
-<div>
+<div ng-controller="SideCtrl">
   <h2>Categories</h2>
-
-  <br>
-  <a class="category-links" href="http://google.com"> Electronics</a>
-  <br>
-  <a class="category-links" href="http://google.com"> Clothing</a>
-  <br>
-  <a class="category-links" href="http://google.com"> Tickets</a>
-  <br>
-  <a class="category-links" href="http://google.com"> Jeremy</a>
-  <br>
-  <a class="category-links" href="http://google.com"> Furniture</a>
-  <br>
-  <a class="category-links" href="http://google.com"> Books</a>
-  <br>
-  <a class="category-links" href="http://google.com"> Sports</a>
+  <div ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</div>
 </div>
