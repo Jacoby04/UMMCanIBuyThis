@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('ummcanIbuyThisApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth, $location) {
+
+    if(!Auth.isLoggedIn()) {
+      $location.path('/login');
+    }
+
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
