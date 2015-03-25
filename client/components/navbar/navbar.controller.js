@@ -13,7 +13,12 @@ angular.module('ummcanIbuyThisApp')
       {
         'title': "UMM",
         'link': "http://www.morris.umn.edu/"
+      },
+      {
+        'title': "Account",
+        'link': ""
       }];
+
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
