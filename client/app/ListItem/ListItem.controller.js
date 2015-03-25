@@ -15,14 +15,28 @@ angular.module('ummcanIbuyThisApp')
 
     $scope.newTag = "";
 
+    $scope.showRepeatedWarning = false;
+
     $http.get('/api/categorys').success(function(categories) {
       $scope.categories = categories;
     });
 
 
     $scope.addTag = function() {
-      $scope.listItemData.tags.push($scope.newTag);
-      $scope.newTag = "";
+      var repeated = false;
+      $scope.showRepeatedWarning = false;
+
+      for (var i = 0; i < $scope.listItemData.tags.length; ++i) {
+        if ($scope.listItemData.tags[i] === $scope.newTag) {
+          repeated = true;
+          $scope.showRepeatedWarning = true;
+        }
+      }
+
+      if (!repeated) {
+        $scope.listItemData.tags.push($scope.newTag);
+        $scope.newTag = "";
+      }
     };
 
     $scope.resetData = function() {
