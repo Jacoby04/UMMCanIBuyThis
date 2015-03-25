@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('ummcanIbuyThisApp')
-  .controller('ListItemCtrl', function ($scope, $http, $location) {
+  .controller('ListItemCtrl', function ($scope, $http, $location, Auth) {
+
+    if(!Auth.isLoggedIn()) {
+      $location.path('/login');
+    }
+
     $scope.listItemData = {
       name: "",
       description: "",
