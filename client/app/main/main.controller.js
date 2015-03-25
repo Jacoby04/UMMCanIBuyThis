@@ -25,4 +25,17 @@ angular.module('ummcanIbuyThisApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    $scope.theItems = [];
+
+    $http.get('/api/ListedItems').success(function(theItems)
+    {
+      $scope.theItems = theItems;
+      //socket.syncUpdates('items', $scope.theItems);
+
+      for (var x in theItems) {
+        console.log(x);
+      }
+    });
+
   });
