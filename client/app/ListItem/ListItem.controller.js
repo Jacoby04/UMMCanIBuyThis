@@ -17,6 +17,8 @@ angular.module('ummcanIbuyThisApp')
 
     $scope.showRepeatedWarning = false;
 
+    $scope.showIncompleteFieldsWarning = false;
+
     $http.get('/api/categorys').success(function(categories) {
       $scope.categories = categories;
     });
@@ -49,18 +51,23 @@ angular.module('ummcanIbuyThisApp')
     };
 
     $scope.createListItem = function() {
-      $http.post('/api/ListedItems/',
-        {
-          name: $scope.listItemData.name,
-          description: $scope.listItemData.description,
-          price: $scope.listItemData.price,
-          category: $scope.listItemData.category,
-          tags: $scope.listItemData.tags,
-          negotiable: $scope.listItemData.negotiable
-        });
+      $scope.showIncompleteFieldsWarning = false;
 
-      $scope.resetData();
+      if ($scope.listItemData.name === "" || $scope.listItemData.category === "" || $scope.listItemData.description === "") {
+        $scope.showIncompleteFieldsWarning = true;
+      } else {
+        $http.post('/api/ListedItems/',
+          {
+            name: $scope.listItemData.name,
+            description: $scope.listItemData.description,
+            price: $scope.listItemData.price,
+            category: $scope.listItemData.category,
+            tags: $scope.listItemData.tags,
+            negotiable: $scope.listItemData.negotiable
+          });
+        $scope.resetData();
 
-      $location.path('/main');
+        $location.path('/main');
+      }
     };
   });
