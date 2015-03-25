@@ -1,7 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <form ng-submit="createListItem()" id="mainForm">
+  <form ng-submit="createListItem()" name="mainForm">
     <h1>
       List an Item
     </h1>
@@ -27,12 +27,13 @@
     <label>Add tags relevant to your item</label>
     <br>
     <input type="text" class="form-control" placeholder="Add a Tag" ng-model="newTag" size="40px">
-    <span class="input-group-btn">
+    </form>
       <button class="btn btn-primary" ng-click="addTag()">Add</button>
-    </span>
+      <br>
     {{listItemData.tags}}
     <br>
 
+    <form ng-submit="createListItem()" name="mainForm">
     <button class="btn btn-primary" type="submit" value="submit">Submit</button>
   </form>
 </div>
