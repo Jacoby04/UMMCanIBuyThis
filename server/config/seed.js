@@ -52,26 +52,230 @@ User.find({}).remove(function() {
 
 ListedItem.find({}).remove(function() {
   ListedItem.create({
-    name: 'Test1',
-    description: 'Description of Test1',
+    name: '***Size 9 Boots***',
+    description: 'I am selling a pair of size 9 boots, picture is attached.  They are too small for me, and sending them back would not be profitable.  I have never worn them, they are brand new (ordered from Nordstrom rack).',
+    price: 30,
+    imagePath: 'assets/images/boots.jpg',
+    category: 'Clothing',
+    tags: ['new', 'stylish', 'size 9', 'boots', 'shoes'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Jeremy',
+      last: 'Eberhardt',
+      email: 'eberh060@morris.umn.edu'
+    }
+  }, {
+    name: 'Graphing Calculator',
+    description: 'TI-84 Plus Edition. New batteries, minor scuffs and scratches, fair condition.',
+    price: 50,
+    imagePath: "assets/images/calculator.jpg",
+    category: 'Electronics',
+    tags: ['used', 'calculator'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Jeremy',
+      last: 'Eberhardt',
+      email: 'eberh060@morris.umn.edu'
+    }
+  }, {
+    name: 'Futon',
+    description: 'A classic metal-framed futon with a fantastic mattress. It\'s satisfied many a butt over the years',
+    price: 35,
+    imagePath: "assets/images/futon.jpg",
+    category: 'Furniture',
+    tags: ['used', 'black', 'good'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Jacob',
+      last: 'Opdahl',
+      email: 'opdah023@morris.umn.edu'
+    }
+  }, {
+    name: 'GoPro Hero 3+ With Accessories',
+    description: 'I have a GoPro Hero 3+ for sale! Along with the GoPro I will be selling a nine piece accessory set including a selfie stick, telescoping handheld monopod, waterproof frame, chest strap, head strap, chest strap, protective frame, and some other frames. I will also be selling a 32GB micro SD card to use with the GoPro! I have the original GoPro packaging as well with all of the camera information. I am asking $230.00 for the entire bundle or best offer! Feel free to contact me with any offers or questions.',
+    price: 230,
+    imagePath: "assets/images/gopro.jpg",
+    category: 'Electronics',
+    tags: ['like new', 'camera', 'accessories', 'gopro', 'waterproof', 'selfie stick', 'straps', 'frames', 'sd card'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Kristin',
+      last: 'Rachor',
+      email: 'racho008@morris.umn.edu'
+    }
+  }, {
+    name: 'You\'ll Love This Seat!',
+    description: 'A lovely loveseat perfect for the lovely college homes of morris. $10 off if you pick it up!',
+    price: 30,
+    imagePath: "assets/images/loveseat.jpg",
+    category: 'Furniture',
+    tags: ['used', 'gray', 'couch', 'lovely'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Andy',
+      last: 'Peterson',
+      email: 'pete9443@morris.umn.edu'
+    }
+  }, {
+    name: 'love seat',
+    description: 'cheap furniture for you\'re new house',
+    price: 29,
+    imagePath: "assets/images/loveseat2.jpg",
+    category: 'Furniture',
+    tags: [],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Jeremy',
+      last: 'Eberhardt',
+      email: 'eberh060@morris.umn.edu'
+    }
+  }, {
+    name: 'Bed Mattress',
+    description: 'Got a mattress for sale, selling it cheap cuz it needs to be cleaned. Twin.',
     price: 20,
-    category: 'Test Category',
-    tags: ['cool', 'suave'],
-    negotiable: true
+    imagePath: "assets/images/mattress.jpg",
+    category: 'Furniture',
+    tags: ['twin', 'bed'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Jake',
+      last: 'Eberhardt',
+      email: 'eberh059@morris.umn.edu'
+    }
+  }, {
+    name: 'MCAT Study Materials',
+    description: 'I am selling my complete MCAT prep material for the new 2015 MCAT.  I am asking for $100, which is less than half of what it costs to buy it new, and it is in perfect condition.  Contact me if you are interested!',
+    price: 100,
+    imagePath: "assets/images/mcat.jpg",
+    category: 'Academic',
+    tags: ['MCAT', 'new', 'study', 'books'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Ben',
+      last: 'Bitdiddle',
+      email: 'bitdi420@morris.umn.edu'
+    }
+  }, {
+    name: 'Millenium Falcon Guitar!!!!!!!!!!!!!!!!',
+    description: 'You\'ve never heard of the Millenium Guitar? It\'s the Guitar that made the Kessel run in less than twelve parsecs.',
+    price: 250,
+    imagePath: "assets/images/Millennium-Falcon-Guitar-3.jpg",
+    category: 'Hobbies',
+    tags: ['star', 'wars', 'star wars', 'Kessel run', 'parsecs'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Han',
+      last: 'Solo',
+      email: 'solox007@morris.umn.edu'
+    }
+  }, {
+    name: 'Dank ottoman 4 sale',
+    description: 'Sweet blue ottoman for sale, legs not included.',
+    price: 10,
+    imagePath: "assets/images/ottoman.jpg",
+    category: 'Furniture',
+    tags: ['ottoman', 'blue', 'used', 'legs'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Joe',
+      last: 'Schmoe',
+      email: 'schmo555@morris.umn.edu'
+    }
+  }, {
+    name: 'Playstation Vita',
+    description: 'I\'m selling my PS Vita to a fellow gamer. It\'s battery life is killer and works amazingly well, I just don\'t want it anymore. Asking for $100 or best offer for the Vita, it\'s charger, and an 8 GB memory card! Email me if you want to game on the go! ',
+    price: 100,
+    imagePath: "assets/images/psvita.jpg",
+    category: 'Games',
+    tags: ['playstation', 'bita', 'vita', 'whoops'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Bill',
+      last: 'Nye',
+      email: 'scienceGuy@morris.umn.edu'
+    }
+  }, {
+    name: 'Pokemon Soulsilver DS',
+    description: 'Take this hard to find game of Pokemon with all the shiny pokemons on it, for a cheap cheap price.',
+    price: 60,
+    imagePath: "assets/images/soulsilver.jpg",
+    category: 'Games',
+    tags: ['legit', 'DS', 'not hacked', 'pokemon', 'lugia', 'shinies', '493'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Ash',
+      last: 'Ketchum',
+      email: 'ketch411@morris.umn.edu'
+    }
+  }, {
+    name: 'Xbox 360',
+    description: 'Lots of both 360 and og xbox games. I think I have 3 or 4 controllers. Games, original console (with cables), and controllers for sale around 200 dollars/ obo. Let me know if you are interested and want pics of all the games, console etc. ',
+    price: 200,
+    imagePath: "assets/images/xbox.jpg",
+    category: 'Games',
+    tags: [],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Gandalf',
+      last: 'da Grey',
+      email: 'stormcrow@morris.umn.edu'
+    }
+  }, {
+    name: 'Piper Kerman Tickets',
+    description: 'For the talk! Even though it\'s free.',
+    price: 5,
+    imagePath: "assets/images/placeholder.jpg",
+    category: 'Tickets',
+    tags: ['suckers'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Scalper',
+      last: 'IsDumd',
+      email: 'scalper@morris.umn.edu'
+    }
+  }, {
+    name: '4X4 Truck for sale',
+    description: 'Sellin\' my truck, new condition, pics on request.',
+    price: 7000,
+    imagePath: "assets/images/placeholder.jpg",
+    category: 'Miscellaneous',
+    tags: ['truck', 'fast', 'new', 'red', 'big'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Dude',
+      last: 'Manrod',
+      email: 'bigma123@morris.umn.edu'
+    }
   });
 });
 
 Category.find({}).remove(function() {
   Category.create({
-    name: 'Test Category 1',
-    tags: []
-  });
-  Category.create({
-    name: 'Test Category 2',
-    tags: []
-  });
-  Category.create({
-    name: 'Test Category 3',
-    tags: []
+    name: 'Clothing',
+    description: 'Do you wear it? Then it\'s clothing.'
+  }, {
+    name: 'Electronics',
+    description: 'For any electrical devices you use other than video games and their systems.'
+  }, {
+    name: 'Games',
+    description: 'For video games and tabletop games.'
+  }, {
+    name: 'Tickets',
+    description: 'For tickets to school related or non-school related events.'
+  }, {
+    name: 'Furniture',
+    description: 'For regular furniture as well as mattresses and other bedding items.'
+  }, {
+    name: 'Academic',
+    description: 'For school supplies, parking passes, and other academic materials.'
+  }, {
+    name: 'Hobbies',
+    description: 'For any items that may be related to a hobby. For example: music equipment, collectibles, trading cards, etc.'
+  }, {
+    name: 'Appliances',
+    description: 'For refrigerators, microwaves, or any other appliance.'
+  }, {
+    name: 'Miscellaneous',
+    description: 'For any items that don\'t fit anywhere else.'
   });
 });

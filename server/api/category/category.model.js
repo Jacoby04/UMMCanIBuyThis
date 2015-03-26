@@ -5,8 +5,7 @@ var mongoose = require('mongoose'),
 
 var CategorySchema = new Schema({
   name: String,
-  // For related tags IF NECESSARY.
-  tags: []
+  description: String
 });
 
 module.exports = mongoose.model('Category', CategorySchema);
