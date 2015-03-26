@@ -28,6 +28,16 @@ angular.module('ummcanIbuyThisApp')
       $scope.categories = categories;
     });
 
+    $scope.showCategoryDescription = function() {
+      var temp = "";
+      for (var i = 0; i < $scope.categories.length; ++i) {
+        if ($scope.listItemData.category === $scope.categories[i].name) {
+          temp = $scope.categories[i].description;
+        }
+      }
+
+      return temp;
+    };
 
     $scope.addTag = function() {
       var repeated = false;
