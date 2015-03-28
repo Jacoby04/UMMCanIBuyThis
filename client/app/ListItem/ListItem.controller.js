@@ -76,9 +76,15 @@ angular.module('ummcanIbuyThisApp')
             name: $scope.listItemData.name,
             description: $scope.listItemData.description,
             price: $scope.listItemData.price,
+            imagePath: 'assets/images/placeholder.jpg',
             category: $scope.listItemData.category,
             tags: $scope.listItemData.tags,
-            negotiable: $scope.listItemData.negotiable
+            negotiable: $scope.listItemData.negotiable,
+            sellerInfo: {
+              first: Auth.getCurrentUser().google.name.givenName,
+              last: Auth.getCurrentUser().google.name.familyName,
+              email: Auth.getCurrentUser().email
+            }
           });
         $scope.resetData();
 
