@@ -56,3 +56,29 @@
   text-decoration: none;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.6);
 }
+
+.displayImg {
+  max-width:86%;
+  max-height:95%;
+  border-radius: 10px;
+  box-shadow: 7px 7px 0px rgba(68,68,68,0.2);
+  #display:block;
+  #margin:auto;
+}
+
+div {
+  #border-style: solid;
+}
+
+.col-md-4 {
+  height: 300px;
+}
+
+.arrow {
+  font-size: 40px;
+  opacity: .5;
+}
+
+.arrow:hover {
+  opacity: 1;
+}

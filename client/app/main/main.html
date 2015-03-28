@@ -11,36 +11,62 @@
 <div id="side" ng-include="'components/sidebar/sidebar.html'"></div>
 
 <div class="container" id="features">
+  Search: <input type="text" size="60px">
+  <h1 class="page-header">Recently Added Items:</h1>
+
   <div class="row">
-    <div class="col-lg-12">
-      <br>
-      Search: <input type="text" size="60px">
-      <h1 class="page-header">Recently Added Items:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="items in theItems">
-        <!--<li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li> -->
-        <li><a href="#" >{{items.name}}</a></li>
-      </ul>
+    <div class="col-md-4">
+      <a href="#" >{{theItems[0].name}}</a><br>
+      <img class="displayImg" src={{theItems[0].imagePath}}>
     </div>
-    <div class="col-lg-12">
-      <br>
-
-      <h1 class="page-header">Recently Viewed:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="items in theItems">
-        <!--<li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li> -->
-        <li><a href="#" >{{items.name}}</a></li>
-      </ul>
+    <div class="col-md-4">
+      <a href="#" >{{theItems[1].name}}</a><br>
+      <img class="displayImg" src={{theItems[1].imagePath}}>
     </div>
-    <div class="col-lg-12">
-      <br>
-
-      <h1 class="page-header">Followed Items:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="items in theItems">
-        <!--<li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li> -->
-        <li><a href="#" >{{items.name}}</a></li>
-      </ul>
+    <div class="col-md-4">
+      <a href="#" >{{theItems[2].name}}</a><br>
+      <img class="displayImg" src={{theItems[2].imagePath}}>
+      <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
     </div>
   </div>
 
+  <h1 class="page-header">Recently Viewed Items:</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <a href="#" >{{theItems[3].name}}</a><br>
+      <img class="displayImg" src={{theItems[3].imagePath}}>
+    </div>
+    <div class="col-md-4">
+      <a href="#" >{{theItems[4].name}}</a><br>
+      <img class="displayImg" src={{theItems[4].imagePath}}>
+    </div>
+    <div class="col-md-4">
+      <a href="#" >{{theItems[5].name}}</a><br>
+      <img class="displayImg" src={{theItems[5].imagePath}}>
+      <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
+    </div>
+    </div>
+
+  <br>
+  <br>
+  <br>
+
+    <h1 class="page-header">Followed Items:</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <a href="#" >{{theItems[6].name}}</a><br>
+        <img class="displayImg" src={{theItems[6].imagePath}}>
+      </div>
+      <div class="col-md-4">
+        <a href="#" >{{theItems[9].name}}</a><br>
+        <img class="displayImg" src={{theItems[9].imagePath}}>
+      </div>
+      <div class="col-md-4">
+        <a href="#" >{{theItems[8].name}}</a><br>
+        <img class="displayImg" src={{theItems[8].imagePath}}>
+        <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
+      </div>
+      </div>
 </div>
 
 <div ng-include="'components/footer/footer.html'"></div>

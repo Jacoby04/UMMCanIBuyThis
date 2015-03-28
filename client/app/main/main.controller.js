@@ -37,10 +37,6 @@ angular.module('ummcanIbuyThisApp')
     {
       $scope.theItems = theItems;
       //socket.syncUpdates('items', $scope.theItems);
-
-      for (var x in theItems) {
-        console.log(x);
-      }
     });
 
   });
