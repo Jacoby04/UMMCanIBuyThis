@@ -1,36 +1,38 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="container FormBox">
   <form ng-submit="createListItem()" name="mainForm">
     <h1>
       List an Item
     </h1>
-    <br>
-    <input type="text" placeholder="Enter Item Name" ng-model="listItemData.name" size="60px" required>
+
+    <input type="text" placeholder="Enter Item Name" ng-model="listItemData.name" size="60px" required ng-required>
     <br>
 
-    $ <input type="Number" placeholder="Enter Item Price" ng-model="listItemData.price" required>
+    $ <input type="Number" placeholder="Enter Item Price" ng-model="listItemData.price" required ng-required>
     <input type="checkbox" ng-model="listItemData.negotiable" value="Is this price negotiable"> Is this price Negotiable?
     <br>
+
     <img src="assets/images/imageUploadTemp.jpg" alt="We are Morris, bum bum bumbumbum bum" width="300px">
-    <textarea placeholder="Enter Description" ng-model="listItemData.description" cols="75" rows="5"/>
+
+    <textarea placeholder="Enter Description" ng-model="listItemData.description" cols="75" rows="5" required ng-required/>
     <br>
-    <br>
-    <br>
-    <select ng-model="listItemData.category" placeholder="Select Category" required>
+
+    <select ng-model="listItemData.category" placeholder="Select Category" required ng-required>
       <option value="" disabled selected>Select Category</option>
       <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
     </select>
     <span>{{showCategoryDescription()}}</span>
     <br>
-    <br>
-    <br>
-    <label>Add tags relevant to your item (optional)</label>
-    <br>
-    <input type="text" class="form-control" placeholder="Add a Tag" ng-model="newTag" size="40px">
+
   </form>
-  <br>
-  <button class="btn btn-primary" ng-click="addTag()">Add</button><br>Tags Added:
+
+
+  <label>Add tags relevant to your item (optional)</label>
+  <input type="text" class="form-control" placeholder="Add a Tag" ng-model="newTag" size="40px">
+  <button class="btn btn-primary" ng-click="addTag()">Add</button>
+
+  <br>Tags Added:
   <p ng-show="showRepeatedWarning">You already entered that tag!</p>
 
   <div class="container" id="features">
@@ -43,9 +45,8 @@
     </div>
   </div>
 
-  <br>
-  <br>
 
+  <!--Needed to break and continue the form so that we don't have to buttons within the form.-->
   <form ng-submit="createListItem()" name="mainForm">
     <button class="btn btn-primary" type="submit" value="submit">Submit</button>
     <p ng-show="showIncompleteFieldsWarning">You have not filled in all of the required fields!</p>

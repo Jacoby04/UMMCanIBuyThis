@@ -8,6 +8,7 @@ angular.module('ummcanIbuyThisApp').controller('SideCtrl', function ($scope, $ht
 
   $http.get('/api/categorys').success(function(categories) {
     $scope.categories = categories;
+    $scope.categories.sort(function(a,b) { return a.name.localeCompare(b.name) });
   });
 
 });
