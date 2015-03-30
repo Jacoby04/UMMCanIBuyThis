@@ -11,13 +11,14 @@ angular.module('ummcanIbuyThisApp')
         'link': '/ListItem'
       },
       {
-        'title': "UMM",
-        'link': "http://www.morris.umn.edu/"
-      },
-      {
         'title': "Account",
         'link': ""
+      },
+      {
+        'title': "UMM",
+        'link': "http://www.morris.umn.edu/"
       }];
+    // KEEP UMM AS THE LAST LINK IN MENU!!!
 
 
     $scope.isCollapsed = true;

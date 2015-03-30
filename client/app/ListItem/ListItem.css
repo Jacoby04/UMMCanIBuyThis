@@ -7,10 +7,39 @@ textarea {
 }
 
 /*Adds margin and drop shadow*/
-.FormBox {
-  -webkit-box-shadow: 0px 0px 5px 7px rgba(176,173,176,1);
-  -moz-box-shadow: 0px 0px 5px 7px rgba(176,173,176,1);
-  box-shadow: 0px 0px 5px 7px rgba(176,173,176,1);
+#FormBox {
+  box-shadow: 8px 8px rgba(0,0,0,.3);
   margin-bottom: 20px;
-  background-color: ghostwhite;
+  background-color: #E3E3E3;
+  padding: 20px;
+  border-radius: 15px;
 }
+#uploadImgBox {
+  /*box-shadow: 3px 3px rgba(0,0,0,.3);*/
+  height: 150px;
+  width: 150px;
+  border-style: dashed;
+  border-width: 2px;
+  border-radius: 10px;
+  margin: 7px;
+  float: left;
+}
+
+#uploadImg {
+  max-width: 50px;
+  display: block;
+  margin: auto;
+  top: auto;
+  transform: translateY(75%);
+
+}
+
+#uploadTxt {
+  text-align: center;
+  transform: translateY(45px);
+}
+button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+

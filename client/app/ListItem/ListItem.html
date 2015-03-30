@@ -1,6 +1,6 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container FormBox">
+<div class="container" id="FormBox">
   <form ng-submit="createListItem()" name="mainForm">
     <h1>
       List an Item
@@ -12,10 +12,17 @@
     $ <input type="Number" placeholder="Enter Item Price" ng-model="listItemData.price" required ng-required>
     <input type="checkbox" ng-model="listItemData.negotiable" value="Is this price negotiable"> Is this price Negotiable?
     <br>
+    <div id="uploadImgBox">
+      <img id="uploadImg" src="http://upload.wikimedia.org/wikipedia/commons/1/10/Circle_arrow_up_font_awesome.svg" alt="We are Morris, bum bum bumbumbum bum" width="300px">
+      <p id="uploadTxt">upload image here</p>
+    </div>
 
-    <img src="assets/images/imageUploadTemp.jpg" alt="We are Morris, bum bum bumbumbum bum" width="300px">
 
-    <textarea placeholder="Enter Description" ng-model="listItemData.description" cols="75" rows="5" required ng-required/>
+
+    <textarea id="box" placeholder="Enter Description" ng-model="listItemData.description" cols="75" rows="5" required ng-required/>
+    <br>
+    <br>
+    <br>
     <br>
 
     <select ng-model="listItemData.category" placeholder="Select Category" required ng-required>
@@ -29,7 +36,8 @@
 
 
   <label>Add tags relevant to your item (optional)</label>
-  <input type="text" class="form-control" placeholder="Add a Tag" ng-model="newTag" size="40px">
+  <input type="text" class="form-control" placeholder="Add a Tag" ng-model="newTag" size="40px"
+         data-toggle="tooltip" title="tags seperated by commas">
   <button class="btn btn-primary" ng-click="addTag()">Add</button>
 
   <br>Tags Added:
