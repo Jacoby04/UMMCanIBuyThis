@@ -8,24 +8,38 @@
   <!--</div>-->
 <!--</header>-->
 
-<div id="side" ng-include="'components/sidebar/sidebar.html'"></div>
+<div id="side">
+  <h2>Categories</h2>
+  <ul>
+    <li ng-click="chooseCategory(category.name)" ng-repeat="category in categories" value="{{category.name}}"><a class='whiteLink' href="#">{{category.name}}</a></li>
+  </ul>
+</div>
 
-<div class="container" id="features">
-  Search: <input type="text" size="60px">
+<form class="searchBar">
+  <input ng-model="searchedText" type="text" size="60px">
+  <button class="btn btn-primary" ng-click="chooseCategory(selectedCategory)">Search</button>
+</form>
+
+<!--<div id="side" ng-include="'components/sidebar/sidebar.html'"></div>-->
+
+<div class="container" id="features" ng-show="showMain">
+
   <h1 class="page-header">Recently Added Items:</h1>
-
   <div class="row">
     <div class="col-md-4">
-      <a href="#" >{{theItems[0].name}}</a><br>
+      <a ng-click="chooseItem(theItems[0])" href="#" >{{theItems[0].name}}<br>
       <img class="displayImg" src={{theItems[0].imagePath}}>
+      </a>
     </div>
     <div class="col-md-4">
-      <a href="#" >{{theItems[1].name}}</a><br>
+      <a ng-click="chooseItem(theItems[1])" href="#" >{{theItems[1].name}}<br>
       <img class="displayImg" src={{theItems[1].imagePath}}>
+      </a>
     </div>
     <div class="col-md-4">
-      <a href="#" >{{theItems[2].name}}</a><br>
+      <a ng-click="chooseItem(theItems[2])" href="#" >{{theItems[2].name}}<br>
       <img class="displayImg" src={{theItems[2].imagePath}}>
+      </a>
       <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
     </div>
   </div>
@@ -33,16 +47,19 @@
   <h1 class="page-header">Recently Viewed Items:</h1>
   <div class="row">
     <div class="col-md-4">
-      <a href="#" >{{theItems[3].name}}</a><br>
+      <a ng-click="chooseItem(theItems[3])" href="#" >{{theItems[3].name}}<br>
       <img class="displayImg" src={{theItems[3].imagePath}}>
+      </a>
     </div>
     <div class="col-md-4">
-      <a href="#" >{{theItems[4].name}}</a><br>
+      <a ng-click="chooseItem(theItems[4])" href="#" >{{theItems[4].name}}<br>
       <img class="displayImg" src={{theItems[4].imagePath}}>
+      </a>
     </div>
     <div class="col-md-4">
-      <a href="#" >{{theItems[5].name}}</a><br>
+      <a ng-click="chooseItem(theItems[5])" href="#" >{{theItems[5].name}}<br>
       <img class="displayImg" src={{theItems[5].imagePath}}>
+      </a>
       <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
     </div>
     </div>
@@ -54,19 +71,30 @@
     <h1 class="page-header">Followed Items:</h1>
     <div class="row">
       <div class="col-md-4">
-        <a href="#" >{{theItems[6].name}}</a><br>
+        <a ng-click="chooseItem(theItems[6])" href="#" >{{theItems[6].name}}<br>
         <img class="displayImg" src={{theItems[6].imagePath}}>
+        </a>
       </div>
       <div class="col-md-4">
-        <a href="#" >{{theItems[9].name}}</a><br>
+        <a ng-click="chooseItem(theItems[9])" href="#" >{{theItems[9].name}}<br>
         <img class="displayImg" src={{theItems[9].imagePath}}>
+        </a>
       </div>
       <div class="col-md-4">
-        <a href="#" >{{theItems[8].name}}</a><br>
+        <a ng-click="chooseItem(theItems[8])" href="#" >{{theItems[8].name}}<br>
         <img class="displayImg" src={{theItems[8].imagePath}}>
+        </a>
         <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
       </div>
       </div>
+</div>
+
+<div ng-show="showList">
+  This will be the list view.
+</div>
+
+<div ng-show="showItem">
+  This will be the item view.
 </div>
 
 <div ng-include="'components/footer/footer.html'"></div>

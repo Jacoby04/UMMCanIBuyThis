@@ -9,11 +9,61 @@ angular.module('ummcanIbuyThisApp')
 
     $scope.awesomeThings = [];
 
+    $scope.categories = [];
+    $scope.theItems = [];
+
+    // Variables to change view on the main page.
+    $scope.showMain = true;
+    $scope.showList = false;
+    $scope.showItem = false;
+
+    // Variables to keep track of and modify for changing the views.
+    $scope.selectedCategory = '';
+    $scope.searchedText = '';
+    $scope.selectedItem = {};
+
+    // =============== DATABASE CALLS HERE ===============
+
+    $http.get('/api/ListedItems').success(function(theItems) {
+      $scope.theItems = theItems;
+      //socket.syncUpdates('items', $scope.theItems);
+    });
+
+    $http.get('/api/categorys').success(function(categories) {
+      $scope.categories = categories;
+      $scope.categories.sort(function(a,b) { return a.name.localeCompare(b.name) });
+    });
+
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
     });
 
+
+    // ============== FILTER FUNCTIONS GO HERE ===========================
+
+
+
+    // ================= BASIC FUNCTIONALITY HERE ==========================
+
+    $scope.chooseCategory = function(category) {
+      $scope.showMain = false;
+      $scope.showList = true;
+      $scope.showItem = false;
+      $scope.selectedCategory = category;
+      $scope.selectedItem = {};
+    };
+
+    $scope.chooseItem = function(item) {
+      $scope.showMain = false;
+      $scope.showList = false;
+      $scope.showItem = true;
+      $scope.selectedCategory = '';
+      $scope.searchedText = '';
+      $scope.selectedItem = item;
+    };
+
+    // ================ BELOW THIS ARE DEFAULT "THINGS" =====================
     $scope.addThing = function() {
       if($scope.newThing === '') {
         return;
@@ -24,19 +74,10 @@ angular.module('ummcanIbuyThisApp')
 
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
-      console.log("hello o/")
     };
 
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
-    });
-
-    $scope.theItems = [];
-
-    $http.get('/api/ListedItems').success(function(theItems)
-    {
-      $scope.theItems = theItems;
-      //socket.syncUpdates('items', $scope.theItems);
     });
 
   });
