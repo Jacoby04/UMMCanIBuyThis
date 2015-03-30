@@ -72,6 +72,7 @@ div {
 
 .col-md-4 {
   height: 300px;
+  text-align: center;
 }
 
 .arrow {
@@ -81,4 +82,16 @@ div {
 
 .arrow:hover {
   opacity: 1;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.whiteLink {
+  color: white;
+}
+
+.searchBar {
+  margin-left: 200px;
 }
