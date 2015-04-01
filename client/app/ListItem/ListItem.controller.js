@@ -76,7 +76,7 @@ angular.module('ummcanIbuyThisApp')
             name: $scope.listItemData.name,
             description: $scope.listItemData.description,
             price: $scope.listItemData.price,
-            imagePath: 'assets/images/placeholder.jpg',
+            imagePath: 'assets/images/placeholder.png',
             category: $scope.listItemData.category,
             tags: $scope.listItemData.tags,
             negotiable: $scope.listItemData.negotiable,

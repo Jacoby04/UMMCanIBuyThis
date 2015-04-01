@@ -7,6 +7,39 @@ angular.module('ummcanIbuyThisApp')
       $location.path('/login');
     }
 
+    //********************** NAVBAR *********************
+    $scope.menu = [
+      {
+        'title': 'List an Item',
+        'link': '/ListItem'
+      },
+      {
+        'title': "Account",
+        'link': ""
+      },
+      {
+        'title': "UMM",
+        'link': "http://www.morris.umn.edu/"
+      }];
+    // KEEP UMM AS THE LAST LINK IN MENU!!!
+
+
+    $scope.isCollapsed = true;
+    $scope.isLoggedIn = Auth.isLoggedIn;
+    $scope.isAdmin = Auth.isAdmin;
+    $scope.getCurrentUser = Auth.getCurrentUser;
+
+    $scope.logout = function() {
+      Auth.logout();
+      $location.path('/login');
+    };
+
+    $scope.isActive = function(route) {
+      return route === $location.path();
+    };
+
+    //*********************** END NAVBAR *********************
+
     $scope.awesomeThings = [];
 
     $scope.categories = [];
@@ -61,6 +94,15 @@ angular.module('ummcanIbuyThisApp')
       $scope.selectedCategory = '';
       $scope.searchedText = '';
       $scope.selectedItem = item;
+    };
+
+    $scope.resetMain = function() {
+      $scope.showMain = true;
+      $scope.showList = false;
+      $scope.showItem = false;
+      $scope.searchedText = '';
+      $scope.selectedCategory = '';
+      $scope.selectedItem = {};
     };
 
     // ================ BELOW THIS ARE DEFAULT "THINGS" =====================

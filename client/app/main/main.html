@@ -1,100 +1,156 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
 
-<!--<header class="hero-unit" id="banner">-->
+<div class="navbar navbar-default navbar-static-top">
   <!--<div class="container">-->
-    <!--<h1>UMM CAN I BUY THIS</h1>-->
-    <!--<p class="lead">The best student transaction service we have to offer. Sorry.</p>-->
-    <!--<img src="assets/images/logo.gif" alt="We are Morris, bum bum bumbumbum bum">-->
-  <!--</div>-->
-<!--</header>-->
+  <header class="hero-unit" id="banner">
+    <div class="container">
+      <h2><a href="/"><img height="80" width="100" src="/assets/images/logo.gif" alt="We are Morris, bum bum bumbumbum bum"></a>UMM CAN I BUY THIS</h2>
+      <p class="lead">The best student transaction service we have to offer. Sorry.</p>
+    </div>
+  </header>
+  <div class="navbar-header">
+    <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li ng-click="resetMain()" ng-class="{active: true}"><a href="#">Home</a></li>
+      <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+        <a ng-href="{{item.link}}">{{item.title}}</a>
+      </li>
+      <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
+    </ul>
 
-<div id="side">
-  <h2>Categories</h2>
-  <ul>
-    <li ng-click="chooseCategory(category.name)" ng-repeat="category in categories" value="{{category.name}}"><a class='whiteLink' href="#">{{category.name}}</a></li>
-  </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
+      <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
+      <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
+      <li ng-show="isLoggedIn()"><a href="http://www.gmail.com">Email</a></li>
+      <!--<li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>-->
+      <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+    </ul>
+  </div>
+  <!--</div>-->
 </div>
 
-<form class="searchBar">
-  <input ng-model="searchedText" type="text" size="60px">
-  <button class="btn btn-primary" ng-click="chooseCategory(selectedCategory)">Search</button>
-</form>
+<div class="row"> <!-- BEGIN ROW HERE -->
 
-<!--<div id="side" ng-include="'components/sidebar/sidebar.html'"></div>-->
+  <!--BEGIN COLUMN FOR SIDEBAR HERE-->
+  <div class="col-md-2">
 
-<div class="container" id="features" ng-show="showMain">
+    <div id="side">
+      <h2>Categories</h2>
+      <ul>
+        <li ng-click="chooseCategory(category.name)" ng-repeat="category in categories" value="{{category.name}}"><a class='whiteLink' href="#">{{category.name}}</a></li>
+      </ul>
+    </div>
 
-  <h1 class="page-header">Recently Added Items:</h1>
-  <div class="row">
-    <div class="col-md-4">
-      <a ng-click="chooseItem(theItems[0])" href="#" >{{theItems[0].name}}<br>
-      <img class="displayImg" src={{theItems[0].imagePath}}>
-      </a>
-    </div>
-    <div class="col-md-4">
-      <a ng-click="chooseItem(theItems[1])" href="#" >{{theItems[1].name}}<br>
-      <img class="displayImg" src={{theItems[1].imagePath}}>
-      </a>
-    </div>
-    <div class="col-md-4">
-      <a ng-click="chooseItem(theItems[2])" href="#" >{{theItems[2].name}}<br>
-      <img class="displayImg" src={{theItems[2].imagePath}}>
-      </a>
-      <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
-    </div>
   </div>
 
-  <h1 class="page-header">Recently Viewed Items:</h1>
-  <div class="row">
-    <div class="col-md-4">
-      <a ng-click="chooseItem(theItems[3])" href="#" >{{theItems[3].name}}<br>
-      <img class="displayImg" src={{theItems[3].imagePath}}>
-      </a>
-    </div>
-    <div class="col-md-4">
-      <a ng-click="chooseItem(theItems[4])" href="#" >{{theItems[4].name}}<br>
-      <img class="displayImg" src={{theItems[4].imagePath}}>
-      </a>
-    </div>
-    <div class="col-md-4">
-      <a ng-click="chooseItem(theItems[5])" href="#" >{{theItems[5].name}}<br>
-      <img class="displayImg" src={{theItems[5].imagePath}}>
-      </a>
-      <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
-    </div>
+  <!--BEGIN COLUMN FOR MAIN STUFF HERE-->
+  <div class="col-md-9">
+
+    <form class="searchBar">
+      <input ng-model="searchedText" type="text" size="60px">
+      <button class="btn btn-primary" ng-click="chooseCategory(selectedCategory)">Search</button>
+    </form>
+
+      <!--Data-binding the main page swap items for debugging purposes.-->
+      <!--{{selectedItem}}-->
+      <!--{{selectedCategory}}-->
+      <!--{{searchedText}}-->
+
+      <!--BEGIN MAIN VIEW HERE!!!-->
+
+    <div class="container" id="features" ng-show="showMain">
+
+      <h1 class="page-header">Recently Added Items:</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <a ng-click="chooseItem(theItems[0])" href="#" >{{theItems[0].name}}<br>
+          <img class="displayImg" src={{theItems[0].imagePath}}>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a ng-click="chooseItem(theItems[1])" href="#" >{{theItems[1].name}}<br>
+          <img class="displayImg" src={{theItems[1].imagePath}}>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a ng-click="chooseItem(theItems[2])" href="#" >{{theItems[2].name}}<br>
+          <img class="displayImg" src={{theItems[2].imagePath}}>
+          </a>
+          <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <h1 class="page-header">Recently Viewed Items:</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <a ng-click="chooseItem(theItems[3])" href="#" >{{theItems[3].name}}<br>
+          <img class="displayImg" src={{theItems[3].imagePath}}>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a ng-click="chooseItem(theItems[4])" href="#" >{{theItems[4].name}}<br>
+          <img class="displayImg" src={{theItems[4].imagePath}}>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a ng-click="chooseItem(theItems[5])" href="#" >{{theItems[5].name}}<br>
+          <img class="displayImg" src={{theItems[5].imagePath}}>
+          </a>
+          <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
+        </div>
+        </div>
+
+      <br>
+      <br>
+      <br>
+
+        <h1 class="page-header">Followed Items:</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <a ng-click="chooseItem(theItems[6])" href="#" >{{theItems[6].name}}<br>
+            <img class="displayImg" src={{theItems[6].imagePath}}>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a ng-click="chooseItem(theItems[9])" href="#" >{{theItems[9].name}}<br>
+            <img class="displayImg" src={{theItems[9].imagePath}}>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a ng-click="chooseItem(theItems[8])" href="#" >{{theItems[8].name}}<br>
+            <img class="displayImg" src={{theItems[8].imagePath}}>
+            </a>
+            <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
+          </div>
+          </div>
     </div>
 
-  <br>
-  <br>
-  <br>
+      <!--BEGIN LIST AND SEARCH VIEW HERE-->
 
-    <h1 class="page-header">Followed Items:</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <a ng-click="chooseItem(theItems[6])" href="#" >{{theItems[6].name}}<br>
-        <img class="displayImg" src={{theItems[6].imagePath}}>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a ng-click="chooseItem(theItems[9])" href="#" >{{theItems[9].name}}<br>
-        <img class="displayImg" src={{theItems[9].imagePath}}>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a ng-click="chooseItem(theItems[8])" href="#" >{{theItems[8].name}}<br>
-        <img class="displayImg" src={{theItems[8].imagePath}}>
-        </a>
-        <span class="glyphicon glyphicon-chevron-right arrow" aria-hidden="true"></span>
-      </div>
-      </div>
-</div>
+    <div ng-show="showList">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="item in theItems">
+              <img height="100" width="100" src="{{item.imagePath}}">
+              <span>{{item.name}}</span>
+            </li>
+        </ul>
+    </div>
 
-<div ng-show="showList">
-  This will be the list view.
-</div>
+      <!--BEGIN SHOW SPECIFIC ITEM VIEW HERE-->
 
-<div ng-show="showItem">
-  This will be the item view.
-</div>
+    <div ng-show="showItem">
+      This will be the item view.
+    </div>
+
+  </div> <!-- END COLUMN HERE -->
+
+</div> <!-- END ROW HERE -->
 
 <div ng-include="'components/footer/footer.html'"></div>
