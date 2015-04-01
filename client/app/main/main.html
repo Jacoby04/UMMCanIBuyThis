@@ -42,8 +42,9 @@
   <div class="col-md-2">
 
     <div id="side">
-      <h2>Categories</h2>
+      <h2>Browse by Category</h2>
       <ul>
+        <li ng-click="chooseCategory('')" value="All"><a class='whiteLink' href="#">All</a></li>
         <li ng-click="chooseCategory(category.name)" ng-repeat="category in categories" value="{{category.name}}"><a class='whiteLink' href="#">{{category.name}}</a></li>
       </ul>
     </div>
@@ -55,7 +56,21 @@
 
     <form class="searchBar">
       <input ng-model="searchedText" type="text" size="60px">
-      <button class="btn btn-primary" ng-click="chooseCategory(selectedCategory)">Search</button>
+      <button ng-hide="searchedText===''" class="btn btn-primary" ng-click="chooseCategory(selectedCategory)">Search</button>
+      <button ng-show="searchedText===''" class="btn btn-primary" ng-click="chooseCategory(selectedCategory)">Browse</button>
+      <label ng-show="showList">
+        Filter by price:
+        <select ng-model="selectedPriceRange">
+          <option ng-value="priceRanges[0]">${{priceRanges[0]}} - $19</option>
+          <option ng-value="priceRanges[1]">${{priceRanges[1]}} - $39</option>
+          <option ng-value="priceRanges[2]">${{priceRanges[2]}} - $59</option>
+          <option ng-value="priceRanges[3]">${{priceRanges[3]}} - $79</option>
+          <option ng-value="priceRanges[4]">${{priceRanges[4]}} - $99</option>
+          <option ng-value="priceRanges[5]">${{priceRanges[5]}}+</option> <!-- Sorry for the hard-codes!! -->
+        </select>
+      </label>
+      {{selectedPriceRange}}
+      <h3>{{selectedCategory}}</h3>
     </form>
 
       <!--Data-binding the main page swap items for debugging purposes.-->
@@ -136,9 +151,13 @@
 
     <div ng-show="showList">
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="item in theItems">
-              <img height="100" width="100" src="{{item.imagePath}}">
-              <span>{{item.name}}</span>
+            <li class="list-group-item" ng-repeat="item in theItems | filter:categoryFilter | filter:priceFilter | filter:searchFilter">
+              <a ng-click="chooseItem(item)" href="#">
+                <img height="100" width="100" src="{{item.imagePath}}">
+                <span>{{item.name}}</span>
+                <span>${{item.price}} <span ng-show="item.negotiable">(Negotiable Price)</span></span>
+                <span>{{item.sellerInfo.first}} {{item.sellerInfo.last}}</span>
+              </a>
             </li>
         </ul>
     </div>
