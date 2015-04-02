@@ -9,7 +9,7 @@
     <input type="text" placeholder="Enter Item Name" ng-model="listItemData.name" size="60px" required ng-required>
     <br>
 
-    $ <input type="Number" placeholder="Enter Item Price" ng-model="listItemData.price" required ng-required>
+    $ <input type="Number" placeholder="Enter Item Price" ng-model="listItemData.price" min="0" required ng-required>
     <input type="checkbox" ng-model="listItemData.negotiable" value="Is this price negotiable"> Is this price Negotiable?
     <br>
     <div id="uploadImgBox">
@@ -46,7 +46,7 @@
   <div class="container" id="features">
     <div class="row">
       <div class="col-lg-12">
-        <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="tag in listItemData.tags">
+        <ul class="nav nav-tabs nav-stacked col-sm-2" ng-repeat="tag in listItemData.tags">
           <li><a href="#" tooltip="{{tag}}">{{tag}}</a></li>
         </ul>
       </div>

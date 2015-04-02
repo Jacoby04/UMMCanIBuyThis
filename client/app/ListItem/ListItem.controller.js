@@ -26,6 +26,7 @@ angular.module('ummcanIbuyThisApp')
 
     $http.get('/api/categorys').success(function(categories) {
       $scope.categories = categories;
+      $scope.categories.sort(function(a,b) { return a.name.localeCompare(b.name) });
     });
 
     $scope.showCategoryDescription = function() {

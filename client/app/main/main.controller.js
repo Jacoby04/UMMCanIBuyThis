@@ -49,6 +49,7 @@ angular.module('ummcanIbuyThisApp')
     $scope.showMain = true;
     $scope.showList = false;
     $scope.showItem = false;
+    $scope.showMyItems = false;
 
     // Variables to keep track of and modify for changing the views.
     $scope.selectedCategory = '';
@@ -123,10 +124,18 @@ angular.module('ummcanIbuyThisApp')
     $scope.priceFilter = function(item) {
       if ($scope.selectedPriceRange == -1) {
         return true;
-      } else if ($scope.selectedPriceRange == $scope.priceRanges[$scope.priceRanges.length - 1]) {
-        return item.price >= $scope.priceRanges[$scope.priceRanges.length - 1];
+      } else if (parseInt($scope.selectedPriceRange) == parseInt($scope.priceRanges[$scope.priceRanges.length - 1])) {
+        return parseInt(item.price) >= parseInt($scope.priceRanges[$scope.priceRanges.length - 1]);
       } else {
-        return (item.price >= $scope.selectedPriceRange) && (item.price < ($scope.selectedPriceRange + 20));
+        return (parseInt(item.price) >= parseInt($scope.selectedPriceRange)) && (parseInt(item.price) < (parseInt($scope.selectedPriceRange) + 20));
+      }
+    };
+
+    $scope.myItemsFilter = function(item) {
+      if ($scope.showMyItems) {
+        return Auth.getCurrentUser().email === item.sellerInfo.email;
+      } else {
+        return true;
       }
     };
 
@@ -135,17 +144,37 @@ angular.module('ummcanIbuyThisApp')
 
     // Also is used for searching.
     $scope.chooseCategory = function(category) {
+
+      if (category === '') {
+        $scope.showMyItems = false;
+      }
+
       $scope.showMain = false;
       $scope.showList = true;
       $scope.showItem = false;
+      $scope.selectedPriceRange = -1;
       $scope.selectedCategory = category;
       $scope.selectedItem = {};
+    };
+
+    $scope.search = function(category) {
+
+      if ($scope.searchedText === '') {
+        // Do nothing
+      } else {
+        $scope.showMain = false;
+        $scope.showList = true;
+        $scope.showItem = false;
+        $scope.selectedCategory = category;
+        $scope.selectedItem = {};
+      }
     };
 
     $scope.chooseItem = function(item) {
       $scope.showMain = false;
       $scope.showList = false;
       $scope.showItem = true;
+      $scope.showMyItems = false;
       $scope.selectedCategory = '';
       $scope.searchedText = '';
       $scope.selectedItem = item;
@@ -156,10 +185,21 @@ angular.module('ummcanIbuyThisApp')
       $scope.showMain = true;
       $scope.showList = false;
       $scope.showItem = false;
+      $scope.showMyItems = false;
       $scope.searchedText = '';
       $scope.selectedCategory = '';
       $scope.selectedItem = {};
       $scope.selectedPriceRange = -1;
+    };
+
+    $scope.myItems = function() {
+      $scope.showMain = false;
+      $scope.showList = true;
+      $scope.showItem = false;
+      $scope.showMyItems = true;
+      $scope.selectedPriceRange = -1;
+      $scope.selectedItem = {};
+      $scope.selectedCategory = '';
     };
 
     // ================ BELOW THIS ARE DEFAULT "THINGS" =====================
