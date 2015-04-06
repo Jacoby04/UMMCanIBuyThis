@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ummcanIbuyThisApp')
-  .controller('MainCtrl', function ($scope, $http, socket, Auth, $location) {
+  .controller('MainCtrl', function ($scope, $http, socket, Auth, $location, $window) {
 
     if(!Auth.isLoggedIn()) {
       $location.path('/login');
@@ -206,24 +206,42 @@ angular.module('ummcanIbuyThisApp')
 
     $scope.message = '';
 
-    // comments: nothing pregenerated for questions
-    // offer will say "hello, i saw you have this thing listed i would like to make you an offer of [user input here]
-    // buy this will say the same, but it would like to buy {{item}} for {{price}}
+    //comments: nothing pregenerated for questions
+    //offer will say "hello, i saw you have this thing listed i would like to make you an offer of [user input here]
+    //buy this will say the same, but it would like to buy {{item}} for {{price}}
 
     //$scope.gmailInfo = {
     //  to: $scope.selectedItem.sellerInfo.email,
     //  subject: $scope.selectedItem.name + " - ",
     //  message: ''
     //};
-    //
-    //$scope.sendGmail = function(seller) {
-    //   var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
-    //     '&to=' + opts.to +
-    //     '&su=' + opts.subject +
-    //     '&body=' + opts.message +
-    //     '&ui=1';
-    //   $window.open(str);
-    //};
+
+    $scope.sendGmailBuy = function(item) {
+       var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
+         '&to=' + item.sellerInfo.email +
+         '&su=' + item.name + ' - Buyer Found' +
+         '&body=' + 'Hello, I saw you have this item, ' + item.name + ', for sale. I would like to buy it for $' + item.price + '. Thanks, ' + Auth.getCurrentUser().name +
+         '&ui=1';
+       $window.open(str);
+    };
+
+    $scope.sendGmailOffer = function(item) {
+      var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
+        '&to=' + item.sellerInfo.email +
+        '&su=' + item.name + ' - Offer Made' +
+        '&body=' + 'Hello, I saw you have this item, ' + item.name + ', for sale. I would like to make an offer of $[INSERT OFFER HERE]. Thanks, ' + Auth.getCurrentUser().name +
+        '&ui=1';
+      $window.open(str);
+    };
+
+    $scope.sendGmailQuestions = function(item) {
+      var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
+        '&to=' + item.sellerInfo.email +
+        '&su=' + item.name + ' - Questions' +
+        '&body=' + '[ADD QUESTIONS TO ASK SELLER HERE]' +
+        '&ui=1';
+      $window.open(str);
+    };
 
     // ================ BELOW THIS ARE DEFAULT "THINGS" =====================
     $scope.addThing = function() {
