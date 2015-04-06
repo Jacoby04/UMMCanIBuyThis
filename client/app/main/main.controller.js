@@ -210,20 +210,20 @@ angular.module('ummcanIbuyThisApp')
     // offer will say "hello, i saw you have this thing listed i would like to make you an offer of [user input here]
     // buy this will say the same, but it would like to buy {{item}} for {{price}}
 
-    $scope.gmailInfo = {
-      to: $scope.selectedItem.sellerInfo.email,
-      subject: $scope.selectedItem.name + " - ",
-      message: ''
-    };
-
-     $scope.sendGmail = function(seller) {
-       var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
-         '&to=' + opts.to +
-         '&su=' + opts.subject +
-         '&body=' + opts.message +
-         '&ui=1';
-       $window.open(str);
-     };
+    //$scope.gmailInfo = {
+    //  to: $scope.selectedItem.sellerInfo.email,
+    //  subject: $scope.selectedItem.name + " - ",
+    //  message: ''
+    //};
+    //
+    //$scope.sendGmail = function(seller) {
+    //   var str = 'http://mail.google.com/mail/?view=cm&fs=1'+
+    //     '&to=' + opts.to +
+    //     '&su=' + opts.subject +
+    //     '&body=' + opts.message +
+    //     '&ui=1';
+    //   $window.open(str);
+    //};
 
     // ================ BELOW THIS ARE DEFAULT "THINGS" =====================
     $scope.addThing = function() {

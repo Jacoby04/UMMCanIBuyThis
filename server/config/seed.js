@@ -138,9 +138,9 @@ ListedItem.find({}).remove(function() {
     tags: ['twin', 'bed'],
     negotiable: true,
     sellerInfo: {
-      first: 'Jake',
+      first: 'Jeremy',
       last: 'Eberhardt',
-      email: 'eberh059@morris.umn.edu'
+      email: 'eberh060@morris.umn.edu'
     }
   }, {
     name: 'MCAT Study Materials',
@@ -307,9 +307,9 @@ ListedItem.find({}).remove(function() {
     tags: ['VS', 'shirt'],
     negotiable: true,
     sellerInfo: {
-      first: 'Jake',
+      first: 'Jeremy',
       last: 'Eberhardt',
-      email: 'eberh059@morris.umn.edu'
+      email: 'eberh060@morris.umn.edu'
     }
   }, {
     name: 'Keurig',
