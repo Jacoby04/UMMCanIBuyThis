@@ -158,9 +158,10 @@
               <a ng-click="chooseItem(item)" href="#">
                 <img height="100" width="100" src="{{item.imagePath}}">
                 <span>{{item.name}}</span>
-                <span>${{item.price}} <span ng-show="item.negotiable">(Negotiable Price)</span></span>
-                <span>{{item.sellerInfo.first}} {{item.sellerInfo.last}}</span>
-              </a>
+                </a>
+                <span class="priceOfItem">${{item.price}} <span class="neg" ng-show="item.negotiable">(Negotiable Price)</span></span>
+                <span class="nameOfBuyer">{{item.sellerInfo.first}} {{item.sellerInfo.last}}</span>
+              
             </li>
         </ul>
     </div>
