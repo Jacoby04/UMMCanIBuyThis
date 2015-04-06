@@ -246,6 +246,123 @@ ListedItem.find({}).remove(function() {
       last: 'Manrod',
       email: 'bigma123@morris.umn.edu'
     }
+  }, {
+    name: 'MINI FRIDGE',
+    description: 'Works! Only 7 years old',
+    price: 25,
+    imagePath: "assets/images/minifridge.jpg",
+    category: 'Appliances',
+    tags: ['small', 'refridgerator'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Scalper',
+      last: 'IsDumd',
+      email: 'scalper@morris.umn.edu'
+    }
+  }, {
+    name: 'Selling 2 sets of knitting needles',
+    description: '.25 inch in gold an purple',
+    price: 6,
+    imagePath: "assets/images/needles.jpg",
+    category: 'Hobbies',
+    tags: ['needle', 'fun'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Kristin',
+      last: 'Rachor',
+      email: 'racho008@morris.umn.edu'
+    }
+  }, {
+    name: 'BRAND NEW flatscreen for sale',
+    description: 'Has only been used once, got a bigger one. 40 inch',
+    price: 300,
+    imagePath: "assets/images/flatscreen.jpg",
+    category: 'Electronics',
+    tags: ['TV'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Mike',
+      last: 'Trout',
+      email: 'trouty@morris.umn.edu'
+    }
+  }, {
+    name: 'FUR Mittens and hat',
+    description: 'Has only been used once, got a bigger one. 40 inch',
+    price: 150,
+    imagePath: "assets/images/mits.jpg",
+    category: 'Clothing',
+    tags: ['mits', 'furry'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Jerry',
+      last: 'Lemmoid',
+      email: 'lemmoid@morris.umn.edu'
+    }
+  }, {
+    name: 'Victoria Secret PINK sweatshirt',
+    description: 'Size medium',
+    price: 15,
+    imagePath: "assets/images/pink.jpg",
+    category: 'Clothing',
+    tags: ['VS', 'shirt'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Jake',
+      last: 'Eberhardt',
+      email: 'eberh059@morris.umn.edu'
+    }
+  }, {
+    name: 'Keurig',
+    description: 'Great condition',
+    price: 60,
+    imagePath: "assets/images/keurig.jpg",
+    category: 'Appliances',
+    tags: ['coffee'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Dude',
+      last: 'Manrod',
+      email: 'bigma123@morris.umn.edu'
+    }
+  }, {
+    name: 'Samsung Captivate Glide',
+    description: 'Works, 5 years old',
+    price: 30,
+    imagePath: "assets/images/phone.jpg",
+    category: 'Electronics',
+    tags: ['phone'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Andy',
+      last: 'Peterson',
+      email: 'pete9443@morris.umn.edu'
+    }
+  }, {
+    name: 'Antique Mug',
+    description: 'My great great great great grandmother made this',
+    price: 6000,
+    imagePath: "assets/images/mug.jpg",
+    category: 'Appliances',
+    tags: ['coffee'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Jacob',
+      last: 'Opdahl',
+      email: 'opdah023@morris.umn.edu'
+    }
+  }, {
+    name: 'Microsoft office',
+    description: 'This thing',
+    price: 60,
+    imagePath: "assets/images/office.jpg",
+    category: 'Academic',
+    tags: ['old'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Andy',
+      last: 'Peterson',
+      email: 'pete9443@morris.umn.edu'
+    }
   });
 });
 
