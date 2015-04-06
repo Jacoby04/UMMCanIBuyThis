@@ -363,6 +363,110 @@ ListedItem.find({}).remove(function() {
       last: 'Peterson',
       email: 'pete9443@morris.umn.edu'
     }
+  }, {
+    name: 'The Avengers - DVD',
+    description: 'Earth\'s mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.',
+    price: 2,
+    imagePath: "assets/images/placeholder.png",
+    category: 'Electronics',
+    tags: ['new', 'movie', 'avengers'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Andy',
+      last: 'Peterson',
+      email: 'pete9443@morris.umn.edu'
+    }
+  }, {
+    name: '3 Kittens need a home FREE',
+    description: 'Born on April 1, these little kittens are little bundles of fur and love. These are just piles of fur, don\'t be fooled by the title.',
+    price: 0,
+    imagePath: "assets/images/3Kittens.jpg",
+    category: 'Miscellaneous',
+    tags: ['fresh', 'cute', 'cats', 'organic'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Jeremy',
+      last: 'McMeowers',
+      email: 'eberh060@morris.umn.edu'
+    }
+  }, {
+    name: 'Bodybag - used',
+    description: 'See title.',
+    price: 20,
+    imagePath: "assets/images/trashBag.jpg",
+    category: 'Hobbies',
+    tags: ['bag', 'trash'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Andy',
+      last: 'Peterson',
+      email: 'pete9443@morris.umn.edu'
+    }
+  }, {
+    name: 'Pearl Earrings',
+    description: 'Never been worn, fake pearls. Bought from Target.',
+    price: 3,
+    imagePath: "assets/images/earring.jpg",
+    category: 'Clothing',
+    tags: ['fake', 'ear'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Kristin',
+      last: 'Rachor',
+      email: 'racho008@morris.umn.edu'
+    }
+  }, {
+    name: 'Printer Paper',
+    description: 'My printer broke, and I have a lot of perfectly fine paper. 700 sheets.',
+    price: 5,
+    imagePath: "assets/images/paper.jpg",
+    category: 'Academic',
+    tags: ['good'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Jacob',
+      last: 'Opdahl',
+      email: 'opdah023@morris.umn.edu'
+    }
+  }, {
+    name: 'Cards Against Humanity Expansion Pack',
+    description: 'The Christmas Edition from 2013 (I think). Only 3 cards are missing that I know of. Potential stains.',
+    price: 10,
+    imagePath: "assets/images/placeholder.png",
+    category: 'Games',
+    tags: ['terrible', 'not funny', 'stupid'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Jeremy',
+      last: 'Eberhardt',
+      email: 'eberh060@morris.umn.edu'
+    }
+  }, {
+    name: 'Parking Pass',
+    description: 'Parking pass for Science building. Year long.',
+    price: 82,
+    imagePath: "assets/images/placeholder.png",
+    category: 'Tickets',
+    tags: ['permit', 'parking', 'car', 'park', 'lot'],
+    negotiable: true,
+    sellerInfo: {
+      first: 'Kristin',
+      last: 'Rachor',
+      email: 'racho008@morris.umn.edu'
+    }
+  }, {
+    name: 'Ouija board',
+    description: 'Good for connecting with loved ones and hated ones that are dead. Also good for accepting blood oaths.',
+    price: 666,
+    imagePath: "assets/images/ouija.jpg",
+    category: 'Games',
+    tags: ['dead', 'scary', 'satanic', 'ritual', 'blood'],
+    negotiable: false,
+    sellerInfo: {
+      first: 'Lucy',
+      last: 'Fur',
+      email: 'furxx666@morris.umn.edu'
+    }
   });
 });
 
