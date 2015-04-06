@@ -168,7 +168,34 @@
       <!--BEGIN SHOW SPECIFIC ITEM VIEW HERE-->
 
     <div ng-show="showItem">
-      This will be the item view.
+      <div class="row">
+        <div class="col-md-4">
+          <img class="viewItemImage" src="{{selectedItem.imagePath}}">
+        </div>
+        <div class="col-md-8">
+          <h1>{{selectedItem.name}}</h1>
+          <h3>By: {{selectedItem.sellerInfo.first}} {{selectedItem.sellerInfo.last}}</h3>
+          <span class="price">Price: ${{selectedItem.price}} </span><span ng-show="selectedItem.negotiable"> (Negotiable)</span>
+          <p>{{selectedItem.description}}</p>
+          <input class="btn btn-primary" type="button" value="Follow This Item">
+
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-1">
+          <input class="btn btn-primary" type="button" value="Buy This">
+        </div>
+        <div class="col-md-2" style="text-align:center">
+          <input class="btn btn-primary" ng-show="selectedItem.negotiable" type="button" value="Make Offer">
+        </div>
+        <div class="col-md-1">
+          <input class="btn btn-primary" type="button" value="Questions">
+        </div>
+        <div class="col-md-8">
+          <input ng-show="selectedItem.sellerInfo.email === getCurrentUser().email" class="btn btn-warning" type="button" value="Remove Item">
+        </div>
+      </div>
     </div>
 
   </div> <!-- END COLUMN HERE -->
