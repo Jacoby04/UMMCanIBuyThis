@@ -261,7 +261,7 @@ ListedItem.find({}).remove(function() {
     }
   }, {
     name: 'Selling 2 sets of knitting needles',
-    description: '.25 inch in gold an purple',
+    description: '.25 inch in gold and purple',
     price: 6,
     imagePath: "assets/images/needles.jpg",
     category: 'Hobbies',
@@ -287,7 +287,7 @@ ListedItem.find({}).remove(function() {
     }
   }, {
     name: 'FUR Mittens and hat',
-    description: 'Has only been used once, got a bigger one. 40 inch',
+    description: 'Real fur. Perfect for keeping you warm on campus',
     price: 150,
     imagePath: "assets/images/mits.jpg",
     category: 'Clothing',
@@ -342,7 +342,7 @@ ListedItem.find({}).remove(function() {
     description: 'My great great great great grandmother made this',
     price: 6000,
     imagePath: "assets/images/mug.jpg",
-    category: 'Appliances',
+    category: 'Miscellaneous',
     tags: ['coffee'],
     negotiable: false,
     sellerInfo: {
@@ -352,7 +352,7 @@ ListedItem.find({}).remove(function() {
     }
   }, {
     name: 'Microsoft office',
-    description: 'This thing',
+    description: 'The full package',
     price: 60,
     imagePath: "assets/images/office.jpg",
     category: 'Academic',
