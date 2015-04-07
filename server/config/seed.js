@@ -445,7 +445,7 @@ ListedItem.find({}).remove(function() {
     name: 'Parking Pass',
     description: 'Parking pass for Science building. Year long.',
     price: 82,
-    imagePath: "assets/images/placeholder.png",
+    imagePath: "assets/images/parkingPass.jpg",
     category: 'Tickets',
     tags: ['permit', 'parking', 'car', 'park', 'lot'],
     negotiable: true,
