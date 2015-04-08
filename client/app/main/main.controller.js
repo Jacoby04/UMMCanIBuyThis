@@ -147,6 +147,7 @@ angular.module('ummcanIbuyThisApp')
 
       if (category === '') {
         $scope.showMyItems = false;
+        //$scope.searchedText = '';
       }
 
       $scope.showMain = false;

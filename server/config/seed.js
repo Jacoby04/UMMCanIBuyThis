@@ -476,7 +476,7 @@ Category.find({}).remove(function() {
     description: 'Do you wear it? Then it\'s clothing.'
   }, {
     name: 'Electronics',
-    description: 'For any electrical devices you use other than video games and their systems.'
+    description: 'For any electronic devices you use other than video games and their systems.'
   }, {
     name: 'Games',
     description: 'For video games and tabletop games.'
