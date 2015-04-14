@@ -106,7 +106,7 @@ ListedItem.find({}).remove(function() {
   }, {
     name: 'You\'ll Love This Seat!',
     description: 'A lovely loveseat perfect for the lovely college homes of morris. $10 off if you pick it up!',
-    price: 30,
+    price: 60,
     imagePath: "assets/images/loveseat.jpg",
     category: 'Furniture',
     tags: ['used', 'gray', 'couch', 'lovely'],
