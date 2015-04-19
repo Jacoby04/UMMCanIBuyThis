@@ -38,7 +38,7 @@
   <label>Add tags relevant to your item (optional)</label>
   <input type="text" class="form-control" placeholder="Add a Tag" ng-model="newTag" size="40px"
          data-toggle="tooltip" title="tags seperated by commas">
-  <button class="btn btn-primary" ng-click="addTag()">Add</button>
+  <button class="btn btn-primary" ng-click="addTag()">Add Tag</button>
 
   <br>Tags Added:
   <p ng-show="showRepeatedWarning">You already entered that tag!</p>
@@ -56,7 +56,7 @@
 
   <!--Needed to break and continue the form so that we don't have to buttons within the form.-->
   <form ng-submit="createListItem()" name="mainForm">
-    <button class="btn btn-primary" type="submit" value="submit">Submit</button>
+    <button class="btn btn-primary" type="submit" value="submit">Submit Item</button>
     <p ng-show="showIncompleteFieldsWarning">You have not filled in all of the required fields!</p>
   </form>
 
